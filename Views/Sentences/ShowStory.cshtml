@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TwoSentenceHorrorStory.Models.Sentence>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h4 class="">TwoSentenceHorrorStory</h4>
+    <p>Bit-sized Scares</p>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="text-center" style="margin-top:8rem">
+        <p class="fade-in-text font-weight-lighter" id="Sentence-1" >@Html.DisplayFor(modelItem => item.IntroSentence)</p>
+        <p class="fade-in-text font-weight-bold" id="Sentence-2" style="display:none;">@Html.DisplayFor(modelItem => item.PostSentence)</p>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary" onclick="showPostSentence()" id="showbtn" style="display:block">Show Story</button>
+        </div>
+    </div>
+    
+   
+}
+<form asp-controller="Sentences" asp-action="ShowStory" class="pt-5">
+    <div class="form-group text-center">
+        <input type="submit" value="Generate" class="btn btn-secondary" />
+    </div>
+</form>

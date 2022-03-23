@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TwoSentenceHorrorStory.Models.Sentence>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class=" container-md-3 text-center">
+    <h4 class="">TwoSentenceHorrorStory</h4>
+    <p>Bit-sized Scares</p>
+</div>
+<form asp-controller="Sentences" asp-action="ShowStory" class="pt-5">
+    <div class="form-group text-center">
+        <input type="submit" value="Generate" class="btn btn-secondary" />
+    </div>
+</form>
